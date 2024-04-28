@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>주소 변경</title>
+</head>
+<body style="background-color: var(--white);">
+    <div class="flex column">
+        <header style="margin-bottom: 1rem;"><h2 class="black">배송지 목록</h2></header>
+        <div class="flex column">
+            <div class="flex column" style="align-self: center;">
+                <button class="addressbtn font-24 gray300">배송지 신규입력</button>
+            </div>
+            <div id="addressBox" class="flex column">
+                <div class="card-content-popup">
+                    <div class="card-hr-wrapper-popupr">
+                        <div class="flex column" style="gap: 0.6rem;">
+                            <div class="flex row" style="align-items: center; justify-content: space-between;">
+                                <h2>윤서빈(윤서빈)</h2>
+                                <button class="mini-btn" onclick="self.close();">선택</button>
+                            </div>
+                            <div class="font-20 inline gray300">
+                                <div class="flex right-padding">
+                                    <span class="line-right">010-5268-9736</span>
+                                    <span class="left-padding">010-5268-9736</span>
+                                </div>
+                            </div>
+                            <span class="font-20 gray500" style="padding-bottom: 1rem;">부산광역시 동래구 온천장로 119번길 102동 602호</span>
+                            <div class="inline" style="gap: 12px;">
+                                <button class="mini-btn">수정</button>
+                                <button id="deleteBtn" class="mini-btn">삭제</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const deleteBtn = document.querySelector('#deleteBtn');
+    const addressBox = document.querySelector('#addressBox');
+    
+
+    deleteBtn.addEventListener('click', () => {
+            addressBox.style.display = 'none';
+        });
+
+</script>
+</html>

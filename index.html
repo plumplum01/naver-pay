@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./img/iconPay.png">
+    <title>네이버페이 결제</title>
+</head>
+<body class="flex column" style="width: 100%;">
+    <div class="header-wrapper flex column" style="justify-content: center;">
+        <header class="flex column">
+            <h2 class="black">주문결제</h2>
+        </header>
+        <div class="shortProcess flex" style="width: 100%; justify-content: center;">
+            <div class="shortProcessInner" style="width: 1590px; margin-bottom: 3rem;">
+                <div class="captionLarge" style="text-align: right; width: 100%; justify-content: flex-end;">
+                    <span class="gray300">장바구니 ></span>
+                    <span class="black" style="font-family: 'pretendard-bold';"> 주문결제</span>
+                    <span class="gray300">> 완료</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex row" style="justify-content: center;">
+        <div class="left card flex column" style="width: 940px; gap: 72px; justify-content: center;">
+            <div class="address">
+                <h1 class="black">배송지</h1>
+                <div class="card-content">
+                    <div class="card-hr-wrapper">
+                        <div class="flex column" style="width: 100%; gap: 0.6rem;">
+                            <div class="flex row" style="align-items: center; justify-content: space-between;">
+                                <h2>윤서빈(윤서빈)</h2>
+                                <button class="mini-btn" onclick="showPopup();">변경</button>
+                            </div>
+                            <div class="font-20 inline gray300">
+                                <div class="flex right-padding">
+                                    <span class="line-right">010-5268-9736</span>
+                                    <span class="left-padding">010-5268-9736</span>
+                                </div>
+                                <div class="checkbox-wrap">
+                                    <input type="checkbox" id="check1" name="동의" />
+                                    <label for="check1">
+                                    <span></span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="coding1" name="interest1" checked />
+                                    <label for="check1">안심번호 사용</label>
+                                </div>
+                            </div>
+                            <span class="font-20 gray500" style="padding-bottom: 1rem;">부산광역시 동래구 온천장로 119번길 102동 602호</span>
+                            <select class="select">
+                                <option value="">배송메모를 선택해주세요</option>
+                                <option value="apple">부재시 문앞에 두고 가세요</option>
+                                <option value="banana">배송 전 연락 바랍니다</option>
+                                <option value="orange">경비실에 맡겨주세요</option>
+                            </select>
+                            <div class="inline" style="padding-top: 0.6rem;">
+                                <div class="checkbox-wrap">
+                                    <input type="checkbox" id="check2" name="동의2" />
+                                    <label for="check2">
+                                    <span></span>
+                                    </label>
+                                </div>
+                                <div class="font-20-regular gray500">
+                                    <input type="checkbox" id="coding2" name="interest2" checked />
+                                    <label for="check2">다음에도 사용할게요</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="flex row" style="justify-content: space-between; align-items: center;">
+                    <h1>주문상품</h1>
+                    <div style="padding-bottom: 1rem;">
+                        <span class="font-24 darkGreen right-padding">1건</span>
+                        <img id="switch1" class="cursor" src="./icon/close.svg" style="padding-bottom: 0.2rem;" alt="">
+                    </div>
+                </div>
+                <div class="card-content" id="orderItem" style="margin-bottom: 1rem;">
+                    <div class="card-hr-wrapper">
+                        <div class="flex column" style="width: 100%; gap: 0.9rem;">
+                            <div style="padding-bottom: 0.6rem;">
+                                <div class="flex row" style="align-items: center; justify-content: space-between;">
+                                    <h2 style="padding-bottom: 1rem;">스포츠 이즈</h2>
+                                    <span class="font-24-regular gray300">배송비 3,000원</span>
+                                </div>
+                                <div class="font-24 inline gray300">
+                                    <div class="flex" style="padding-right: 0.2rem;">
+                                        <button class="non-btn">오늘출발</button>
+                                        <span>마감(14:00) <span style="color: var(--darkGreen);">4.24(수) 발송예정</span></span>
+                                    </div>
+                                    <div class="flex" style="align-items: center;"><img class="question" src="./icon/help.svg" alt="" style="cursor: pointer;"></div>
+                                </div>
+                            </div>
+                            <div class="flex row" style="gap: 30px;">
+                                <div class="item-img"><img src="./img/thumb.png" alt="bag image" style="width: 130px;"></div>
+                                <div class="flex column" style="gap: 15px;">
+                                    <h2 class="font-22">나이키 더플백 망치가방 더블백 헬스 요가 운동 짐가방</h2>
+                                    <div class="inline">
+                                        <button class="non-btn" style="color: var(--gray500); padding: 0.4rem;">옵션</button>
+                                        <span class="font-20 line-right gray300">상품선택: 6.나이키 컬러 소프트</span>
+                                        <span class="font-20 gray700 left-padding">1개</span>
+                                    </div>
+                                    <div class="inline font-24">
+                                        <span class="gray700 right-padding">49,500원</span>
+                                        <span class="gray300 right-padding" style="text-decoration: line-through;">110,000</span>
+                                        <img src="./icon/npay.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="total banner-lightGreen flex row" style="align-items: center; justify-content: space-between;">
+                    <span class="font-24 black">총 주문금액</span>
+                    <div class="inline">
+                        <span class="font-24 darkGreen" style="padding-right: 0.6rem;">52,500원</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 카드사 결제 할인 -->
+            <div class="pointLarge">
+                <h1>포인트·머니</h1>
+                <div class="card-content" style="margin-bottom: 1rem;">
+                    <div class="card-hr-wrapper">
+                        <div class="flex column" style="width: 100%; gap: 1.4rem;">
+                            <div class="flex row" style="align-items: center; justify-content: space-between;">
+                                <h2>보유</h2>
+                                <span class="font-27 black">2,963원</span>
+                            </div>
+                            <div style="border-left: 3px solid var(--gray300); padding-left: 1rem;">
+                                <div class="flex row" style="align-items: center; padding-bottom: 0.6rem; justify-content: space-between;">
+                                    <span class="font-24 gray300">포인트</span>
+                                    <span class="font-24 gray300">1,190원</span>
+                                </div>
+                                <div class="flex row" style="align-items: center; justify-content: space-between;">
+                                    <span class="font-24 gray300">머니</span>
+                                    <span class="font-24 gray300">1,773원</span>
+                                </div>
+                            </div>
+                            <div class="inline flex" style="justify-content: space-between; gap: 24px;">
+                                <div class="cashbox flex row" style="width: 100%; align-items: center; justify-content: space-between;">
+                                    <span class="font-24 gray300">사용</span>
+                                    <span class="font-24 darkGreen">0원</span>
+                                </div>
+                                <button class="greenbtn darkGreen lightGreen font-20">전액사용</button>
+                            </div>
+                            <div class="inline" style="justify-content: flex-end; padding-bottom: 0.6rem;">
+                                <div class="checkbox-wrap">
+                                    <input type="checkbox" id="check3" name="동의3" />
+                                    <label for="check3">
+                                    <span></span>
+                                    </label>
+                                </div>
+                                <div class="font-24-regular gray500">
+                                    <input type="checkbox" id="coding3" name="interest3" checked />
+                                    <label for="check3">항상 전액사용</label>
+                                </div>
+                            </div>
+                            <div class="banner flex row" style="align-items: center; justify-content: space-between;">
+                                <span class="font-24 gray500">내 숨은 포인트 찾기</span>
+                                <div class="inline">
+                                    <span class="font-24 gray500" style="padding-right: 0.6rem;">?원</span>
+                                    <img src="./icon/right.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="payAfter banner-white flex column" style="gap: 16px;">
+                    <div class="inline">
+                        <div class="checkbox-wrap">
+                            <input type="checkbox" id="check4" name="동의4" />
+                            <label for="check4">
+                            <span></span>
+                            </label>
+                        </div>
+                        <div class="flex font-22 black" style="align-items: center;">
+                            <input type="checkbox" id="coding4" name="interest4" checked />
+                            <label for="check4" class="right-padding">후불결제</label>
+                            <img src="./icon/saleChip.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="inline">
+                        <span class="font-20-regular gray300" style="padding-left: 2.2rem;">지금 구매, 납부는 다음에! (최대 30만원)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pay flex column">
+                <div class="flex row" style="justify-content: space-between; padding-bottom: 0.7rem;">
+                    <h1>결제수단</h1>
+                    <div class="flex row" style="align-items: center;">
+                        <span class="font-24 darkGreen right-padding">52,500원</span>
+                        <img id="switch2" class="cursor" src="./icon/close.svg" style="padding-bottom: 0.5rem;" alt="">
+                    </div>
+                </div>
+                <div id="payment" class="card-content-pay flex column" style="margin-bottom: 16px;">
+                    <div class="banner-pay-top flex column">
+                        <div class="inline">
+                            <div class="radiobox-wrap">
+                                <input type="radio" id="radio1" name="pay" />
+                                <label for="radio1">
+                                <span></span>
+                                </label>
+                            </div>
+                            <div class="flex font-22 black" style="align-items: center;">
+                                <input type="radio" id="radio1" name="pay"/>
+                                <label for="radio1" class="right-padding">N페이 머니 충전결제</label>
+                                <img src="./icon/saleChip.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hr-line"></div>
+                    <div class="banner-pay flex column">
+                        <div class="inline">
+                            <div class="radiobox-wrap">
+                                <input type="radio" id="radio2" name="pay"/>
+                                <label for="radio2">
+                                <span></span>
+                                </label>
+                            </div>
+                            <div class="flex font-22 black" style="align-items: center;">
+                                <input type="radio" id="radio2" name="pay"/>
+                                <label for="radio2" class="right-padding">계좌 간편결제</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hr-line"></div>
+                    <div class="banner-pay flex column">
+                        <div class="inline">
+                            <div class="radiobox-wrap">
+                                <input type="radio" id="radio3" name="pay" checked>
+                                <label for="radio3">
+                                    <span></span>
+                                </label>
+                            </div>
+                            <div class="flex font-22 black" style="align-items: center;">
+                                <input type="radio" id="radio3" name="pay">
+                                <label for="radio3" class="right-padding">카드 간편결제</label>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="carouselCard flex row" style="justify-content: space-between; padding:1rem 0 2.8rem 0;">
+                        <button class="carousel-btn prev" style="padding-right: 2rem; border: none; background-color: transparent;"><img width="32px" src="./icon/left-click.svg" alt=""></button>
+                        <div class="carousel-Wrapper" style="width: 800px; overflow: hidden;">
+                            <div class="carousel flex row" style="gap: 32px;">
+                                <div id="first" class="non-click cashcard flex row" style="flex: 0 0 auto; gap: 32px; width: 480px;">
+                                    <img src="./img/cashcard.svg" alt="">
+                                    <div class="flex column" style="justify-content: space-between; padding: 1rem 0 1rem 0;">
+                                        <p class="font-24 black">토스뱅크카드 오렌지밀크</p>
+                                        <p class="font-24 gray700">체크 8080</p>
+                                        <p class="flex font-24 gray300" style="align-items: center;">일시불
+                                            <img src="./icon/down.svg" alt="">
+                                        </p>
+                                    </div>
+                                </div>
+                                <div id="second" class="non-click cashcard flex row" style="flex: 0 0 auto; gap: 32px; width: 480px;">
+                                    <img src="./img/cashcard2.svg" alt="">
+                                    <div class="flex column" style="justify-content: space-between; padding: 1rem 0 1rem 0;">
+                                        <p class="font-24 black">토스뱅크카드 그레이</p>
+                                        <p class="font-24 gray700">체크 8080</p>
+                                        <p class="flex font-24 gray300" style="align-items: center;">일시불
+                                            <img src="./icon/down.svg" alt="">
+                                        </p>
+                                    </div>
+                                </div>
+                                <div id="third" class="non-click cashcard flex row" style="flex: 0 0 auto; gap: 32px; margin-right: 300px;  width: 480px;">
+                                    <img src="./img/cashcard2.svg" alt="">
+                                    <div class="flex column" style="justify-content: space-between; padding: 1rem 0 1rem 0;">
+                                        <p class="font-24 black">토스뱅크카드 그레이</p>
+                                        <p class="font-24 gray700">체크 8080</p>
+                                        <p class="flex font-24 gray300" style="align-items: center;">일시불
+                                            <img src="./icon/down.svg" alt="">
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-btn next" style="padding-left: 2rem; border: none; background-color: transparent;"><img width="32px" src="./icon/right-click.svg" alt=""></button>
+                    </div>
+                    <div class="banner-lightGreen flex row" style="align-items: center; margin-bottom: 1.4rem; justify-content: space-between;">
+                        <span class="font-20-regular black">전원 실적, 한도 조건 없이 최대 2% 적립</span>
+                        <div class="inline">
+                            <span class="font-24 darkGreen" style="padding-right: 0.6rem;">>>></span>
+                        </div>
+                    </div>
+                    <div class="hr-line"></div>
+                    <div class="banner-pay flex column">
+                        <div class="inline">
+                            <div class="radiobox-wrap">
+                                <input type="radio" id="radio4" name="pay" />
+                                <label for="radio4">
+                                <span></span>
+                                </label>
+                            </div>
+                            <div class="flex font-22 black" style="align-items: center;">
+                                <input type="checkbox" id="radio4" name="pay" />
+                                <label for="radio4" class="right-padding">일반결제</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hr-line"></div>
+                    <div class="banner-pay flex column" style="gap: 20px;">
+                        <div class="flex row">
+                            <span class="font-22 gray500">결제/할인혜택 안내</span>
+                        </div>
+                        <div class="inline">
+                            <span class="font-20-regular gray300" style="padding-right: 0.6rem;">등록카드는 <span style="text-decoration: underline; cursor: pointer;">설정>카드정보</span> 에서 변경 가능합니다.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-white flex column" style="gap: 16px;">
+                    <div class="flex row">
+                        <span class="font-22 gray500">개인정보 제공동의:</span>
+                        <span class="font-22 darkGreen right-padding">스포츠이즈</span>
+                        <span class="font-22 gray300" style="text-decoration: underline; cursor: pointer;">상세보기</span>
+                    </div>
+                    <div class="inline">
+                        <span class="font-20-regular gray300" style="padding-right: 0.6rem;">구매안전 서비스 안내</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex column" style="align-self: center;">
+                <h2 class="font-20" style="text-align: center; padding-top: 2rem; margin-bottom: 2rem;">주문 내용을 확인하였으며, 정보 제공 등에 동의합니다.</h2>
+                <button class="paybtn font-24">결제하기</button>
+            </div>
+            <div class="hr-line" style="margin-top: 2rem;"></div>
+            <div class="flex column" style="padding: 10rem 0 2rem 0; width: 100%; justify-content: center;">
+                <div class="flex row" style="padding-bottom: 2rem; justify-content: center;">
+                    <span class="caption line-right">로그아웃</span>
+                    <span class="caption line-right left-padding">전체서비스</span>
+                    <span class="caption line-right left-padding">쇼핑&페이 고객센터</span>
+                    <span class="caption line-right left-padding">약관 및 정책</span>
+                    <span class="caption line-right left-padding">개인정보처리방침</span>
+                    <span class="caption line-right left-padding">신용정보활용체제</span>
+                    <span class="caption left-padding">네이버페이 광고&포인트</span>
+                </div>
+                <div>
+                    <p class="caption" style="text-align: center;">네이버파이낸셜은 전자결제서비스제공자 및 통신판매중개자이며 통신판매의 당사자가 아닙니다. 상품, 상품정보 및 거래에 관한 의무와 책임은
+                        판매자에게 있습니다.</p>
+                </div>
+            </div>
+        </div>
+        <div class="right flex column" style="width: 480px; gap: 64px; margin-right: 80px;">
+            <div class="payDetail">
+                <div class="flex row" style="justify-content: space-between;">
+                    <h1>결제상세</h1>
+                    <div style="padding-bottom: 1rem;">
+                        <span class="font-24 darkGreen right-padding">총 52,500원</span>
+                        <img id="switch4" class="cursor" src="./icon/close.svg" style="padding-top: 0.2rem;" alt="">
+                    </div>
+                </div>
+                <div id="detail" class="banner-white flex row" style="align-items: center; justify-content: space-between;">
+                    <span class="font-22 black">카드 간편결제</span>
+                    <div class="inline">
+                        <span class="font-24 darkGreen" style="padding-right: 0.6rem;">52,500원</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pointSmall flex column">
+                <div class="flex row" style="justify-content: space-between;">
+                    <h1>포인트 혜택</h1>
+                    <div style="padding-bottom: 1rem;">
+                        <span class="font-24 darkGreen right-padding">총 495원</span>
+                        <img id="switch3" class="cursor" src="./icon/close.svg" style="padding-top: 0.2rem;" alt="">                    
+                    </div>
+                </div>
+                <div class="flex column" style="gap: 24px;">
+                    <div id="point" class="card-content">
+                        <div class="card-hr-wrapper">
+                            <div class="flex column" style="width: 100%; gap: 1.4rem;">
+                                <div style="margin-bottom: 0.5rem;">
+                                    <div class="flex row" style="padding-bottom: 0.6rem; align-items: center; justify-content: space-between;">
+                                        <h2 class="font-24 black">구매적립</h2>
+                                        <span class="font-24 black">총 495원</span>
+                                    </div>
+                                    <div style="border-left: 3px solid var(--gray300); padding-left: 1rem;">
+                                        <div class="flex row" style="align-items: center; justify-content: space-between;">
+                                            <span class="font-20 gray300">기본적립</span>
+                                            <span class="font-20 gray300">495원</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex row" style="align-items: center; justify-content: space-between;">
+                                    <div class="flex column">
+                                        <h2 class="font-24 black" style="padding-bottom: 0.6rem;">리뷰적립</h2>
+                                        <span class="font-16-regular gray300">동일상품의 상품/한달리뷰 적립은 각 1회로 제한</span>
+                                    </div>
+                                    <span class="font-24 black">최대 170원</span>
+                                </div>
+                                <div class="hr-line"></div>
+                                <div class="flex row" style="align-items: center; justify-content: space-between;">
+                                    <div class="inline" style="cursor: pointer; padding-top: 0.8rem;">
+                                        <span class="font-20 black">구매 감사 포인트 받기</span>
+                                        <img src="./icon/right.svg" alt="">
+                                    </div>
+                                    <span class="font-24 darkGreen" style="padding-right: 0.6rem;">+1,980원</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="banner-gradient">
+                        <div class="flex column" style="gap: 8px;">
+                            <div class="flex row">
+                                <span class="font-22 black">소상공인을 응원합니다</span>
+                            </div>
+                            <div class="inline">
+                                <span class="font-27 darkGreen" style="padding-right: 0.6rem;">네이버페이 무료 QR송금</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    const carousel = document.querySelector('.carousel');
+    const question = document.querySelector('.question');
+    const nonClick = document.querySelectorAll('.non-click');
+    const payBtn = document.querySelector('.paybtn');
+
+    const change1 = document.querySelector('#switch1');
+    const change2 = document.querySelector('#switch2');
+    const change3 = document.querySelector('#switch3');
+    const change4 = document.querySelector('#switch4');
+    const orderItem = document.querySelector('#orderItem');
+    const payment = document.querySelector('#payment');
+    const point = document.querySelector('#point');
+    const detail = document.querySelector('#detail');
+
+
+// 팝업
+function showPopup() 
+{ window.open("showPopup.html", "address", "width=600, height=640, left=500, top=180"); }
+
+
+// 주문 목록
+change1.addEventListener('click', () => {
+    if (orderItem.style.display === 'none') {
+        orderItem.style.display = 'block';
+        change1.src = './icon/close.svg'; // 이미지 변경
+    } else {
+        orderItem.style.display = 'none';
+        change1.src = './icon/open.svg'; // 이미지 변경
+    }
+});
+
+//결제수단
+change2.addEventListener('click', () => {
+    if (payment.style.display === 'none') {
+        payment.style.display = 'block';
+        change2.src = './icon/close.svg'; // 이미지 변경
+    } else {
+        payment.style.display = 'none';
+        change2.src = './icon/open.svg'; // 이미지 변경
+    }
+});
+
+
+// 포인트
+change3.addEventListener('click', () => {
+    if (point.style.display === 'none') {
+        point.style.display = 'block';
+        change3.src = './icon/close.svg'; // 이미지 변경
+    } else {
+        point.style.display = 'none';
+        change3.src = './icon/open.svg'; // 이미지 변경
+    }
+});
+
+// 결제상세
+change4.addEventListener('click', () => {
+    if (detail.style.display === 'none') {
+        detail.style.display = 'flex';
+        change4.src = './icon/close.svg'; // 이미지 변경
+    } else {
+        detail.style.display = 'none';
+        change4.src = './icon/open.svg'; // 이미지 변경
+    }
+});
+
+
+
+    payBtn.addEventListener('click',()=> {
+        alert('결제가 완료되었습니다.');
+    })
+
+    question.addEventListener('click',()=> {
+        alert('해당 배송 정보는 스마트 스토어에서 제공하는 정보입니다.');
+    })
+
+    let index = 0;
+
+    prevButton.addEventListener('click', () => {
+        if (index === 0) return;
+        index -= 1;
+
+        carousel.style.transform = `translate3d(-${500 * index}px, 0, 0)`;
+    });
+
+    nextButton.addEventListener('click', () => {
+        if (index === 2) return;
+        index += 1;
+
+        carousel.style.transform = `translate3d(-${500 * index}px, 0, 0)`;
+    });
+
+    // cashcard.addEventListener('click',()=> {
+    //     cashcard.style.border = '1px solid var(--darkGreen)';
+    //     cashcard.style.boxShadow = '0px 0px 10px 0px var(--darkGreen)';
+    // })
+
+
+function handleClick(event) {
+    // div에서 모든 "click" 클래스 제거
+    nonClick.forEach((e) => {
+        e.classList.remove("click");
+    });
+    // 클릭한 div만 "click"클래스 추가
+    event.target.classList.add("click");
+    }
+
+    nonClick.forEach((e) => {
+    e.addEventListener("click", handleClick);
+    });
+
+
+</script>
+</html>

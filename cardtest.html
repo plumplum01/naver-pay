@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="carouselCard">
+        <button class="carousel-btn prev" style="border: none; background-color: transparent;"><img src="./icon/left-click.svg" alt=""></button>
+        <div class="carousel-Wrapper" style="width: 800px; overflow: hidden;">
+            <div class="carousel flex row" style="gap: 32px;">
+                <div id="first" class="non-click cashcard flex row" style="flex: 0 0 auto; gap: 32px; width: 480px;">
+                    <img src="./img/cashcard.svg" alt="">
+                    <div class="flex column" style="justify-content: space-between; padding: 1rem 0 1rem 0;">
+                        <p class="font-24 black">토스뱅크카드 오렌지밀크</p>
+                        <p class="font-24 gray700">체크 8080</p>
+                        <p class="flex font-24 gray300" style="align-items: center;">일시불
+                            <img src="./icon/down.svg" alt="">
+                        </p>
+                    </div>
+                </div>
+                <div id="second" class="non-click cashcard flex row" style="flex: 0 0 auto; gap: 32px; width: 480px;">
+                    <img src="./img/cashcard2.svg" alt="">
+                    <div class="flex column" style="justify-content: space-between; padding: 1rem 0 1rem 0;">
+                        <p class="font-24 black">토스뱅크카드 그레이</p>
+                        <p class="font-24 gray700">체크 8080</p>
+                        <p class="flex font-24 gray300" style="align-items: center;">일시불
+                            <img src="./icon/down.svg" alt="">
+                        </p>
+                    </div>
+                </div>
+                <div id="third" class="non-click cashcard flex row" style="flex: 0 0 auto; gap: 32px; width: 480px;">
+                    <img src="./img/cashcard2.svg" alt="">
+                    <div class="flex column" style="justify-content: space-between; padding: 1rem 0 1rem 0;">
+                        <p class="font-24 black">토스뱅크카드 그레이</p>
+                        <p class="font-24 gray700">체크 8080</p>
+                        <p class="flex font-24 gray300" style="align-items: center;">일시불
+                            <img src="./icon/down.svg" alt="">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-btn next" style="border: none; background-color: transparent;"><img src="./icon/right-click.svg" alt=""></button>
+    </div>
+</body>
+<script>
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    const carousel = document.querySelector('.carousel');
+    const nonClick = document.querySelectorAll('.non-click');
+
+    let index = 0;
+
+    prevButton.addEventListener('click', () => {
+        if (index === 0) return;
+        index -= 1;
+
+        carousel.style.transform = `translate3d(-${500 * index}px, 0, 0)`;
+    });
+
+    nextButton.addEventListener('click', () => {
+        if (index === 2) return;
+        index += 1;
+
+        carousel.style.transform = `translate3d(-${500 * index}px, 0, 0)`;
+    });
+
+    // cashcard.addEventListener('click',()=> {
+    //     cashcard.style.border = '1px solid var(--darkGreen)';
+    //     cashcard.style.boxShadow = '0px 0px 10px 0px var(--darkGreen)';
+    // })
+
+
+function handleClick(event) {
+    // div에서 모든 "click" 클래스 제거
+    nonClick.forEach((e) => {
+        e.classList.remove("click");
+    });
+    // 클릭한 div만 "click"클래스 추가
+    event.target.classList.add("click");
+    }
+
+    nonClick.forEach((e) => {
+    e.addEventListener("click", handleClick);
+    });
+
+
+</script>
+</html>
